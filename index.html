@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🏫 School Management System</h1>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="dashboard">Dashboard</button>
+    <button class="tab" data-tab="students">Students</button>
+    <button class="tab" data-tab="teachers">Teachers</button>
+    <button class="tab" data-tab="classes">Classes</button>
+    <button class="tab" data-tab="attendance">Attendance</button>
+  </nav>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="panel active">
+      <h2>Dashboard</h2>
+      <div class="cards">
+        <div class="card"><span id="countStudents">0</span><p>Students</p></div>
+        <div class="card"><span id="countTeachers">0</span><p>Teachers</p></div>
+        <div class="card"><span id="countClasses">0</span><p>Classes</p></div>
+      </div>
+    </section>
+
+    <!-- Students -->
+    <section id="students" class="panel">
+      <h2>Students</h2>
+      <form id="studentForm" class="form">
+        <input type="text" id="studentName" placeholder="Full name" required />
+        <input type="number" id="studentRoll" placeholder="Roll no." required />
+        <select id="studentClass"></select>
+        <button type="submit">Add Student</button>
+      </form>
+      <table id="studentTable">
+        <thead><tr><th>Name</th><th>Roll</th><th>Class</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Teachers -->
+    <section id="teachers" class="panel">
+      <h2>Teachers</h2>
+      <form id="teacherForm" class="form">
+        <input type="text" id="teacherName" placeholder="Full name" required />
+        <input type="text" id="teacherSubject" placeholder="Subject" required />
+        <button type="submit">Add Teacher</button>
+      </form>
+      <table id="teacherTable">
+        <thead><tr><th>Name</th><th>Subject</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Classes -->
+    <section id="classes" class="panel">
+      <h2>Classes</h2>
+      <form id="classForm" class="form">
+        <input type="text" id="className" placeholder="Class name (e.g. Grade 5-A)" required />
+        <select id="classTeacher"></select>
+        <button type="submit">Add Class</button>
+      </form>
+      <table id="classTable">
+        <thead><tr><th>Class</th><th>Teacher</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Attendance -->
+    <section id="attendance" class="panel">
+      <h2>Attendance</h2>
+      <form id="attendanceControls" class="form">
+        <select id="attClass"></select>
+        <input type="date" id="attDate" />
+        <button type="button" id="loadAttendance">Load</button>
+        <button type="button" id="saveAttendance">Save</button>
+      </form>
+      <table id="attendanceTable">
+        <thead><tr><th>Name</th><th>Roll</th><th>Present</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+          
